@@ -119,14 +119,15 @@ if __name__ == "__main__":
         global last_signed_date
 
         today = datetime.date.today()
+        logger.debug("🔍 Daily check month")
         if (not month_check) or (today.month - last_signed_date.month >= 1):
-            logger.info(f"Start signing attendances for {account} ...")
+            logger.info(f"📝 Start signing attendances for {account} ...")
             signed_df = sign_attendances(account, password)
 
             if signed_df.empty:
-                logger.info("No attendances to sign.")
+                logger.info("👻 No attendances to sign.")
             else:
-                logger.info(f"\nSuccessfully signed records:\n{signed_df.to_string()}")
+                logger.info(f"\n✅ Successfully signed records:\n{signed_df.to_string()}")
 
             last_signed_date = today
 
