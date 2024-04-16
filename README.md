@@ -25,7 +25,7 @@
    export NYCU_ACCOUNT="你的學號"
    export NYCU_PASSWORD="你的密碼"
    ```
-6. 執行下方指令開始自動簽到，如果不想要每天自動上去簽到可以將 `--run_schedule` 移除，如此就只會上去簽到這一次。
+6. 執行下方指令開始自動簽到，如果不想要每天自動上去簽到可以將 `--monthly` 移除，如此就只會上去簽到這一次。
    ```bash
-   python main.py --run_schedule
+   python main.py --monthly
    ```

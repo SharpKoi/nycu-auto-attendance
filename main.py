@@ -31,7 +31,7 @@ driver = create_driver()
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--run_schedule", action="store_true")
+    parser.add_argument("--monthly", action="store_true")
 
     return parser.parse_args()
 
@@ -133,7 +133,7 @@ if __name__ == "__main__":
 
     sign_task(month_check=False)  # sign the attendances at the beginning.
 
-    if args.run_schedule:
+    if args.monthly:
         schedule.every().day.do(sign_task)
         while True:
             schedule.run_pending()
