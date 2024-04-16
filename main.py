@@ -116,6 +116,8 @@ if __name__ == "__main__":
     password = os.getenv("NYCU_PASSWORD")
 
     def sign_task(month_check=True):
+        global last_signed_date
+
         today = datetime.date.today()
         if (not month_check) or (today.month - last_signed_date.month >= 1):
             logger.info(f"Start signing attendances for {account} ...")
